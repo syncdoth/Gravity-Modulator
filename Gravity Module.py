@@ -82,11 +82,11 @@ def updatescreen():
             F=setforce
             i=1
     a=100*F/(m_piston + m_ball)
-    
+
     if ball.xcor()<200 and vix >= 0:
         piston.setx(piston.xcor()+vix/100)
         vix += a/100
-        
+
     if not ball.xcor()<200:
         viy += g/100
 
@@ -103,9 +103,8 @@ def updatescreen():
     ball.sety(ball.ycor()+viy/100)
     turtle.update()
     if r == 0:
-        print(r)
         turtle.ontimer(updatescreen, 1)
-        
+
 def reset():
     global r
     r =1
@@ -123,7 +122,7 @@ def reset():
 
     turtle.update()
 
-    
+
 
 turtle.onkeypress(updatescreen,"Return")
 turtle.onkeypress(reset, "space")
